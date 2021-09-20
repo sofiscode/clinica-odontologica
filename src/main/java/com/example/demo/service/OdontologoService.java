@@ -19,8 +19,8 @@ public class OdontologoService implements IOdontologoService{
     ObjectMapper mapper; //
 
     @Override
-    public void createOdontologo(OdontologoDTO stu) {
-        saveOdontologo(stu);
+    public void createOdontologo(OdontologoDTO odo) {
+        saveOdontologo(odo);
     }
 
     @Override
@@ -30,12 +30,12 @@ public class OdontologoService implements IOdontologoService{
     }
 
     @Override
-    public void updateOdontologo(OdontologoDTO stu) {
-        saveOdontologo(stu);
+    public void updateOdontologo(OdontologoDTO odo) {
+        saveOdontologo(odo);
     }
-    private void saveOdontologo(OdontologoDTO stu) {
-        Odontologo newStudent = mapper.convertValue(stu, Odontologo.class);
-        odontologoRepository.save(newStudent);
+    private void saveOdontologo(OdontologoDTO odo) {
+        Odontologo newOdontologo = mapper.convertValue(odo, Odontologo.class);
+        odontologoRepository.save(newOdontologo);
     }
 
     @Override
@@ -45,12 +45,12 @@ public class OdontologoService implements IOdontologoService{
 
     @Override
     public Collection<OdontologoDTO> getAll() {
-        List<Odontologo> allStudents = odontologoRepository.findAll();
-        Set<OdontologoDTO> allStudentsDTO = new HashSet<OdontologoDTO>();
-        for(Odontologo student: allStudents)
-            allStudentsDTO.add(mapper.convertValue(student,OdontologoDTO.class));
+        List<Odontologo> allOdontologos = odontologoRepository.findAll();
+        Set<OdontologoDTO> allOdontologosDTO = new HashSet<OdontologoDTO>();
+        for(Odontologo odontologo: allOdontologos)
+            allOdontologosDTO.add(mapper.convertValue(odontologo,OdontologoDTO.class));
 
-        return allStudentsDTO;
+        return allOdontologosDTO;
     }
 
 }
