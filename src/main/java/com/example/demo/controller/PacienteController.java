@@ -40,9 +40,14 @@ public class PacienteController {
         return response;
     }
     @GetMapping("/list")
-    public Collection<PacienteDTO> listPaciente() {
+    public Collection<PacienteDTO> listPacientes() {
         return pacienteService.getAll();
     }
 
+    @GetMapping("/{id}")
+    public PacienteDTO listPaciente(@PathVariable Long id){
+        PacienteDTO paciente =  pacienteService.readPaciente(id);
+        return paciente;
 
+    }
 }

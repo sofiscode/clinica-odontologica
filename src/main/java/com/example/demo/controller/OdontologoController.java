@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.OdontologoDTO;
+import com.example.demo.model.PacienteDTO;
 import com.example.demo.service.IOdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,8 +45,10 @@ public class OdontologoController {
         return odontologoService.getAll();
     }
 
- /*   @GetMapping("/getLastnameLike")
-    public Set<OdontologoDTO> listStudentsWithLastnameLike(@RequestParam String lastname) {
-        return odontologoService.getStudentsWithLastnameLike(lastname);
-    }*/
+    @GetMapping("/{id}")
+    public OdontologoDTO listPaciente(@PathVariable Long id){
+        OdontologoDTO odontologo =  odontologoService.readOdontologo(id);
+        return odontologo;
+
+    }
 }
