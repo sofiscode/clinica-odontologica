@@ -20,5 +20,4 @@ public class Domicilio {
     private String localidad;
     private String provincia;
 
-
 }
