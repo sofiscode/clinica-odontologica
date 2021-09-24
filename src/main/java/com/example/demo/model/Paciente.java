@@ -1,26 +1,24 @@
 package com.example.demo.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
+import lombok.*;
 import javax.persistence.*;
+import java.util.List;
 import java.time.LocalDate;
-import java.util.Set;
+
 
 @Entity
 @Table(name = "Pacientes")
 @Getter
 @Setter
-public class Paciente {
+public class Paciente extends Usuario{
 
-    @Id
-    @GeneratedValue
-    Long id;
-    String nombre;
-    String apellido;
-    String domicilio;
     Integer dni;
     LocalDate fechaDeAlta;
+    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Turno> turnos;
 
-
+    @JoinColumn(name = "Domicilios_id")
+    @OneToOne(fetch = FetchType.LAZY)
+    private Domicilio domicilio;
 }
+

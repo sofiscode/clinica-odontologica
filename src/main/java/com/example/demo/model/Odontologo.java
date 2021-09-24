@@ -2,26 +2,18 @@ package com.example.demo.model;
 
 import lombok.*;
 import javax.persistence.*;
-import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
+
 
 @Entity
 @Table(name = "Odontologos")
 @Getter
 @Setter
-public class Odontologo {
+public class Odontologo extends Usuario {
 
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String name;
-    private String lastname;
     private String matricula;
 
+    @OneToMany(mappedBy = "odontologo", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Turno> turnos;
 
-//   @ManyToOne
-   //@JoinColumn(name = "paciente_id")
-   //private Paciente paciente;
-
-   //private Set<Paciente> pacientes;
 }
