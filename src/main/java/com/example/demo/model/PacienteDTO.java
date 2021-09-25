@@ -7,12 +7,9 @@ import java.util.List;
 import java.util.Set;
 
 @Getter @Setter
-public class PacienteDTO {
-    Long id;
-    String nombre;
-    String apellido;
-    String domicilio;
-    Integer dni;
-    LocalDate fechaDeAlta;
-    List<Turno> turnos;
+public class PacienteDTO extends UsuarioDTO{
+    private DomicilioDTO domicilio;
+    private Integer dni;
+    private LocalDate fechaDeAlta;
+    private List<Turno> turnos;
 }

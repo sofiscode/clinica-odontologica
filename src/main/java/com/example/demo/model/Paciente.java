@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import javax.persistence.*;
 import java.util.List;
@@ -15,10 +16,10 @@ public class Paciente extends Usuario{
     Integer dni;
     LocalDate fechaDeAlta;
     @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Turno> turnos;
 
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "Domicilios_id")
-    @OneToOne(fetch = FetchType.LAZY)
     private Domicilio domicilio;
 }
-

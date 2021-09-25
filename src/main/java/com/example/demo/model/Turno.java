@@ -26,16 +26,6 @@ public class Turno {
     @JoinColumn(name = "Pacientes_id")
     private Paciente paciente;
 
-//    public Turno(Long id, Odontologo odontologo, Paciente paciente, Date fechaHora) {
-//        this.id = id;
-//        this.odontologo = odontologo;
-//        this.paciente = paciente;
-//        this.fechaHora = fechaHora;
-//    }
 
-//    public Turno(Odontologo odontologo, Date fechaHora) {
-//        this.odontologo = odontologo;
-//        this.fechaHora = fechaHora;
-//    }
 
 }

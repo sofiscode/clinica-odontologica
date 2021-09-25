@@ -1,7 +1,6 @@
 package com.example.demo.model;
 
 import lombok.*;
-
 import javax.persistence.*;
 
 

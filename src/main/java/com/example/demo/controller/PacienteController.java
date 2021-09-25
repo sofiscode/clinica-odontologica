@@ -1,6 +1,9 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.DomicilioDTO;
+import com.example.demo.model.Paciente;
 import com.example.demo.model.PacienteDTO;
+import com.example.demo.service.IDomicilioService;
 import com.example.demo.service.IPacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +17,8 @@ import java.util.Collection;
 public class PacienteController {
     @Autowired
     IPacienteService pacienteService;
-
+    @Autowired
+    IDomicilioService domicilioService;
     @PostMapping
     public ResponseEntity<?> addPaciente(@RequestBody PacienteDTO pac) {
         pacienteService.createPaciente(pac);
@@ -31,6 +35,9 @@ public class PacienteController {
     public ResponseEntity<?> removePaciente(@PathVariable Long id) {
         ResponseEntity<String> response = null;
         if (pacienteService.readPaciente(id) != null) {
+//            Long idDomicilio = pacienteService.readPaciente(id).getDomicilio().getId();
+//            pacienteService.readPaciente(id).setDomicilio(null);
+//            domicilioService.deleteDomicilio(idDomicilio);
             pacienteService.deletePaciente(id);
             response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
         } else {
@@ -38,6 +45,7 @@ public class PacienteController {
         }
         return response;
     }
+
     @GetMapping("/list")
     public Collection<PacienteDTO> listPacientes() {
         return pacienteService.getAll();

@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.OdontologoDTO;
 import com.example.demo.model.PacienteDTO;
 import com.example.demo.service.IOdontologoService;
+import com.example.demo.service.IRolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,8 @@ import java.util.Set;
 public class OdontologoController {
     @Autowired
     IOdontologoService odontologoService;
+
+
 
     @PostMapping
     public ResponseEntity<?> addOdontologo(@RequestBody OdontologoDTO odo) {

@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,10 +9,8 @@ import java.util.Set;
 
 @Getter
 @Setter
-public class OdontologoDTO {
-    private Long id;
-    private String name;
-    private String lastname;
+public class OdontologoDTO extends UsuarioDTO{
+
     private String matricula;
     private List<Turno> turnos;
 }

@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.model.Odontologo;
 import com.example.demo.model.OdontologoDTO;
+import com.example.demo.model.RolDTO;
 import com.example.demo.repository.IOdontologoRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,20 @@ public class OdontologoService implements IOdontologoService{
     IOdontologoRepository odontologoRepository;
 
     @Autowired
+    IRolService rolService;
+
+    @Autowired
     ObjectMapper mapper; //
 
     @Override
     public void createOdontologo(OdontologoDTO odo) {
+        RolDTO rol = rolService.readRol(2L); //L long
+        odo.setRol(rol);
         saveOdontologo(odo);
+    }
+    private void saveOdontologo(OdontologoDTO odo) {
+        Odontologo newOdontologo = mapper.convertValue(odo, Odontologo.class);
+        odontologoRepository.save(newOdontologo);
     }
 
     @Override
@@ -33,10 +43,8 @@ public class OdontologoService implements IOdontologoService{
     public void updateOdontologo(OdontologoDTO odo) {
         saveOdontologo(odo);
     }
-    private void saveOdontologo(OdontologoDTO odo) {
-        Odontologo newOdontologo = mapper.convertValue(odo, Odontologo.class);
-        odontologoRepository.save(newOdontologo);
-    }
+
+
 
     @Override
     public void deleteOdontologo(Long id) {
