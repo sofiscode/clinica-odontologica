@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -14,7 +15,7 @@ import java.util.List;
 public class Odontologo extends Usuario {
     private String matricula;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "odontologo", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Turno> turnos;
+   // @JsonIgnore
+   // @OneToMany(mappedBy = "odontologo")
+   // private Set<Turno> turnos;
 }

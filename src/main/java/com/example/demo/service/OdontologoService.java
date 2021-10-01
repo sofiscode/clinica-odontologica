@@ -41,10 +41,13 @@ public class OdontologoService implements IOdontologoService{
 
     @Override
     public void updateOdontologo(OdontologoDTO odo) {
-        saveOdontologo(odo);
+        Optional<Odontologo> odontologoGuardado = odontologoRepository.findById(odo.getId());
+        Odontologo newOdontologo2 = mapper.convertValue(odontologoGuardado, Odontologo.class);
+        Odontologo newOdontologo = mapper.convertValue(odo, Odontologo.class);
+
+        newOdontologo.setRol(newOdontologo2.getRol());
+        odontologoRepository.save(newOdontologo);
     }
-
-
 
     @Override
     public void deleteOdontologo(Long id) {

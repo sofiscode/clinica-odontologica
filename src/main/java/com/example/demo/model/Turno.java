@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -17,7 +18,9 @@ public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date fechaHora;
+    private LocalDateTime fechaHora;
+    private boolean disponible; //flag
+
     @ManyToOne()
     @JoinColumn(name = "Odontologos_id")
     private Odontologo odontologo;

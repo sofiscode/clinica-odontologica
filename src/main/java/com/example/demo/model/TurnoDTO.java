@@ -5,6 +5,7 @@ import com.example.demo.model.Paciente;
 
 import lombok.*;
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -17,6 +18,7 @@ public class TurnoDTO {
     private Long id;
     private Odontologo odontologo;
     private Paciente paciente;
-    private Date fechaHora;
+    private LocalDateTime fechaHora;
+    private boolean disponible;
 
 }

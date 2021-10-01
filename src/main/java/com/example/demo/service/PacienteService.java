@@ -30,23 +30,24 @@ public class PacienteService implements IPacienteService{
     public void createPaciente(PacienteDTO pac) {
         RolDTO rol = rolService.readRol(3L);
         pac.setRol(rol);
-
-        DomicilioDTO dom = pac.getDomicilio();
-        Long idDomicilio = domicilioService.createDomicilio(dom);
-        dom.setId(idDomicilio);
         savePaciente(pac);
     }
 
     @Override
     public PacienteDTO readPaciente(Long id) {
+       //optional indica que el objeto es de tipo <X> pero que tambien puede ser nulo
+        /*La diferencia es lo que retorna, getById devuelve la clase y findById devuelve un Optional de la clase.
+Cuando traés un Optional tenés que poner un .get() luego para tener el objeto, así que el getById() te ahorra un paso.
+*/
         Optional<Paciente> found = pacienteRepository.findById(id);
-        return mapper.convertValue(found, PacienteDTO.class);
+        return mapper.convertValue(found, PacienteDTO.class); //al objeto X convertilo a un objeto de clase paciente dto. si fuera .string, convertiria en tipo string (por ejemplo para saber elt itulo de la clase)
     }
 
     @Override
     public void updatePaciente(PacienteDTO pac) {
         savePaciente(pac);
     }
+
     private void savePaciente(PacienteDTO pac) {
         Paciente newPaciente = mapper.convertValue(pac, Paciente.class);
         LocalDate fecha = LocalDate.now();

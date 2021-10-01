@@ -8,24 +8,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/get_odontologo.js"></script>
-    <script type="text/javascript" src="/js/put_odontologo.js"></script>
-    <script type="text/javascript" src="/js/delete_odontologo.js"></script>
+    <script type="text/javascript" src="/js/get_odontologos.js"></script>
+    <script type="text/javascript" src="/js/delete_odontologos.js"></script>
+    <script type="text/javascript" src="/js/put_odontologos.js"></script>
+<!--    <script type="text/javascript" src="/js/post_odontologos.js"></script>-->
 </head>
 <body>
 <div class="container">
     <ul class="nav nav-pills">
         <li class="nav-item">
-            <a class="nav-link" href="/">Agregar nuevo</a>
+            <a class="nav-link" href="/odontologoAlta.html">Alta Odontólogo</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/odontologoList.HTML/">Todas</a>
+            <a class="nav-link" href="/odontologosList.html/">Listar Todos</a>
         </li>
     </ul>
 
-    <div id="div_pelicula_table">
-        <h1>Odontologo</h1>
-        <div class="row col-md-6 table-responsive">
+    <div id="div_odontologo_table">
+        <h1>odontologos</h1>
+        <div class="row col-md-12 table-responsive">
             <table id="odontologoTable" class="table table-striped">
                 <thead>
                 <tr>
@@ -33,6 +34,9 @@
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Matricula</th>
+                    <th>Usuario</th>
+                    <th>Password</th>
+                    <th>Eliminar</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -52,48 +56,32 @@
                 </div>
                 <div class="form-group">
                     <label >Nombre:</label>
-                    <input type="text" class="form-control" placeholder="nombre" id="nombre">
+                    <input type="text" class="form-control" placeholder="Nombre" id="nombre">
                 </div>
                 <div class="form-group">
                     <label >Apellido:</label>
-                    <input type="text" class="form-control" placeholder="apellido" id="apellido">
+                    <input type="text" class="form-control" placeholder="Apellido" id="apellido">
                 </div>
                 <div class="form-group">
-                    <label >Matrocula:</label>
-                    <input type="text" class="form-control" placeholder="matricula" id="matricula">
+                    <label >Matricula:</label>
+                    <input type="text" class="form-control" placeholder="Matricula" id="matricula">
                 </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group">
+                    <label >Usuario:</label>
+                    <input type="text" class="form-control" placeholder="Usuario" id="usuario">
+                </div>
+                <div class="form-group">
+                    <label >Password:</label>
+                    <input type="text" class="form-control" placeholder="Password" id="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Modificar</button>
             </form>
+
             <div id="response" style="display:none; margin:10px">
             </div>
         </div>
     </div>
     <hr>
-
-    <!-- The Modal -->
-    <div class="modal fade" id="delete-modal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Odongologo eliminado</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger" id="model-delete-btn">Eliminar</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 </body>
 </html>

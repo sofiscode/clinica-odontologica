@@ -32,6 +32,7 @@ public class OdontologoController {
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> removeOdontologo(@PathVariable Long id) {
         ResponseEntity<String> response = null;

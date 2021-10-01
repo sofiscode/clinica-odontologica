@@ -12,5 +12,5 @@ import java.util.Set;
 public class OdontologoDTO extends UsuarioDTO{
 
     private String matricula;
-    private List<Turno> turnos;
+    //private Set<Turno> turnos;
 }

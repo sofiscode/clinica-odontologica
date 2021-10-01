@@ -15,10 +15,13 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/pacientes")
 public class PacienteController {
+
     @Autowired
     IPacienteService pacienteService;
+
     @Autowired
     IDomicilioService domicilioService;
+
     @PostMapping
     public ResponseEntity<?> addPaciente(@RequestBody PacienteDTO pac) {
         pacienteService.createPaciente(pac);
@@ -35,9 +38,6 @@ public class PacienteController {
     public ResponseEntity<?> removePaciente(@PathVariable Long id) {
         ResponseEntity<String> response = null;
         if (pacienteService.readPaciente(id) != null) {
-//            Long idDomicilio = pacienteService.readPaciente(id).getDomicilio().getId();
-//            pacienteService.readPaciente(id).setDomicilio(null);
-//            domicilioService.deleteDomicilio(idDomicilio);
             pacienteService.deletePaciente(id);
             response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
         } else {

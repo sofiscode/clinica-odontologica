@@ -26,7 +26,6 @@ public class DomicilioService implements IDomicilioService{
 
     @Override
     public Long createDomicilio(DomicilioDTO dom) {
-
          return saveDomicilio(dom);
     }
 
@@ -38,8 +37,8 @@ public class DomicilioService implements IDomicilioService{
 
     @Override
     public void updateDomicilio(DomicilioDTO dom) {
-
     }
+
     @Override
     public void deleteDomicilio(Long id) {
         domicilioRepository.deleteById(id);

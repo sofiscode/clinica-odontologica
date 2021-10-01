@@ -11,5 +11,5 @@ public class PacienteDTO extends UsuarioDTO{
     private DomicilioDTO domicilio;
     private Integer dni;
     private LocalDate fechaDeAlta;
-    private List<Turno> turnos;
+   // private Set<Turno> turnos;
 }

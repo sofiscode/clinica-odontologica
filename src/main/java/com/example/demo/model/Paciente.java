@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 import java.time.LocalDate;
+import java.util.Set;
 
 
 @Entity
@@ -15,10 +16,11 @@ public class Paciente extends Usuario{
 
     Integer dni;
     LocalDate fechaDeAlta;
+   /* @JsonIgnore
     @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
-    private List<Turno> turnos;
-
+    private Set<Turno> turnos;
+*/
+    //@JsonIgnore
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "Domicilios_id")
     private Domicilio domicilio;
