@@ -8,4 +8,5 @@ public interface ITurnoService {
     void updateTurno(TurnoDTO turno);
     void deleteTurno(Long id);
     Collection<TurnoDTO> getAll();
+    Collection<TurnoDTO> getAllbyOdontologoId(Long id);
 }

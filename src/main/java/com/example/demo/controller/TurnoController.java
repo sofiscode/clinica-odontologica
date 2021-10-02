@@ -20,12 +20,17 @@ public class TurnoController {
     public Collection<TurnoDTO> listTurnos() {
         return turnoService.getAll();
     }
+    @GetMapping("/list/{id}")
+    public Collection<TurnoDTO> listTurnos(@PathVariable Long id) {
+        return turnoService.getAllbyOdontologoId(id);
+    }
 
     @PostMapping
     public ResponseEntity<?> addTurno(@RequestBody TurnoDTO turno) {
         turnoService.createTurno(turno);
         return ResponseEntity.ok(HttpStatus.OK);
     }
+
 
     @PutMapping()
     public ResponseEntity<?> modifyTurno(@RequestBody TurnoDTO turno) {

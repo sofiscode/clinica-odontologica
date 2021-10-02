@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Pacientes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/post_pacientes.js"></script>
+</head>
+<body>
+<div class="container">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="/pacientesList.html">Administrar Pacientes</a>
+    </li>
+
+  </ul>
+  <div class="row">
+    <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
+      <h3>Agregar pacientes</h3>
+      <form id="add_new_paciente">
+<!--        <div class="form-group">-->
+<!--          <div class="form-group">-->
+<!--            <label >Id:</label>-->
+<!--            <input type="text" class="form-control" id="paciente_id" readonly>-->
+<!--          </div>-->
+          <div class="form-group">
+            <label >Usuario:</label>
+            <input type="text" class="form-control" placeholder="Usuario" id="usuario">
+          </div>
+          <div class="form-group">
+            <label >Password:</label>
+            <input type="password" class="form-control" placeholder="Password" id="password">
+          </div>
+          <div class="form-group">
+            <label >Nombre:</label>
+            <input type="text" class="form-control" placeholder="Nombre" id="nombre">
+          </div>
+          <div class="form-group">
+            <label >Apellido:</label>
+            <input type="text" class="form-control" placeholder="Apellido" id="apellido">
+          </div>
+          <div class="form-group">
+            <label >Dni:</label>
+            <input type="text" class="form-control" placeholder="Dni" id="dni">
+          </div>
+<!--          <div class="form-group">-->
+<!--            <label >Domicilio:</label>-->
+<!--            <input type="text" class="form-control" placeholder="Domicilio" id="domicilio" readonly>-->
+<!--          </div>-->
+          <div class="form-group">
+            <label >Calle</label>
+            <input type="text" class="form-control" placeholder="Calle" id="calle">
+          </div>
+          <div class="form-group">
+            <label >Numero</label>
+            <input type="text" class="form-control" placeholder="Numero" id="numero">
+          </div>
+          <div class="form-group">
+            <label >Piso</label>
+            <input type="text" class="form-control" placeholder="Piso" id="piso">
+          </div>
+          <div class="form-group">
+            <label >Localidad</label>
+            <input type="text" class="form-control" placeholder="Localidad" id="localidad">
+          </div>
+          <div class="form-group">
+            <label >Provincia</label>
+            <input type="text" class="form-control" placeholder="Provincia" id="provincia">
+          </div>
+<!--          <div class="form-group">-->
+<!--            <label >Fecha de alta</label>-->
+<!--            <input type="text" class="form-control" placeholder="Fecha de Alta" id="fechaDeAlta">-->
+<!--          </div>-->
+<!--          <div class="form-group">-->
+<!--            <label >Rol</label>-->
+<!--            <input type="text" class="form-control" placeholder="Rol" id="rol" readonly>-->
+<!--          </div>-->
+
+
+        <button type="submit" class="btn btn-danger" id="btn-add-new-paciente">Cargar</button>
+      </form>
+      <div id="response" style="display:none; margin-top:10px">
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

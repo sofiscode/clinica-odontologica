@@ -3,10 +3,22 @@ window.addEventListener('load', function () {
     formulario.addEventListener('submit', function (event) {
         event.preventDefault();
         const formData = {
+           // id: document.querySelector('#paciente_id').value,
             usuario: document.querySelector('#usuario').value,
             password: document.querySelector('#password').value,
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
+            dni: document.querySelector('#dni').value,
+            domicilio: {
+            //id: document.querySelector('#domicilio').value,
+                        calle: document.querySelector('#calle').value,
+                        numero: document.querySelector('#numero').value,
+                        piso: document.querySelector('#piso').value,
+                        localidad: document.querySelector('#localidad').value,
+                        provincia: document.querySelector('#provincia').value
+                        }
+//            fechaDeAlta: document.querySelector('#fechaDeAlta').value,
+//            rol: {id: document.querySelector('#rol').value}
 
         };
 
@@ -29,6 +41,9 @@ window.addEventListener('load', function () {
                  document.querySelector('#response').innerHTML = successAlert;
                  document.querySelector('#response').style.display = "block";
                  resetUploadForm();
+
+                 window.setTimeout(redirect, 2000);
+
             })
             .catch(error => {
                     let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
@@ -39,12 +54,24 @@ window.addEventListener('load', function () {
                       document.querySelector('#response').style.display = "block";
                      resetUploadForm();})
     });
-
+function redirect() {
+        window.location = "/pacientesList.html";
+   }
     function resetUploadForm(){
         document.querySelector('#usuario').value = "";
         document.querySelector('#password').value = "";
         document.querySelector('#nombre').value = "";
         document.querySelector('#apellido').value = "";
+        document.querySelector('#dni').value = "";
+//        document.querySelector('#domicilio').value = paciente.domicilio.id;
+        document.querySelector('#calle').value = "";
+        document.querySelector('#numero').value = "";
+        document.querySelector('#piso').value = "";
+        document.querySelector('#localidad').value = "";
+        document.querySelector('#provincia').value = "";
+//        document.querySelector('#fechaDeAlta').value = paciente.fechaDeAlta;
+//        document.querySelector('#rol').value = paciente.rol.id;
+
 
     }
 

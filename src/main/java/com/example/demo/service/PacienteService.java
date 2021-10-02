@@ -45,6 +45,12 @@ Cuando traés un Optional tenés que poner un .get() luego para tener el objeto,
 
     @Override
     public void updatePaciente(PacienteDTO pac) {
+        Optional<Paciente> pacienteGuardado = pacienteRepository.findById(pac.getId());
+        Paciente newPaciente2 = mapper.convertValue(pacienteGuardado, Paciente.class);
+        Paciente newPaciente = mapper.convertValue(pac, Paciente.class);
+        newPaciente.setRol(newPaciente2.getRol());
+        newPaciente.setDomicilio(newPaciente2.getDomicilio());
+
         savePaciente(pac);
     }
 

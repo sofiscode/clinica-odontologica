@@ -31,16 +31,18 @@
                 <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Usuario</th>
+                    <th>Password</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>DNI</th>
+                    <th style="display:none">IdDomicilio</th>
                     <th>Calle</th>
-                    <th>Numero</th>
+                    <th>Número</th>
                     <th>Piso</th>
                     <th>Localidad</th>
                     <th>Provincia</th>
-                    <th>Fecha de alta</th>
-
+                    <th>Alta</th>
                     <th>Eliminar</th>
                     <th></th>
                 </tr>
@@ -60,6 +62,14 @@
                     <input type="text" class="form-control" id="paciente_id" readonly>
                 </div>
                 <div class="form-group">
+                    <label >Usuario:</label>
+                    <input type="text" class="form-control" placeholder="Usuario" id="usuario">
+                </div>
+                <div class="form-group">
+                    <label >Password:</label>
+                    <input type="text" class="form-control" placeholder="Password" id="password">
+                </div>
+                <div class="form-group">
                     <label >Nombre:</label>
                     <input type="text" class="form-control" placeholder="Nombre" id="nombre">
                 </div>
@@ -70,6 +80,10 @@
                 <div class="form-group">
                     <label >Dni:</label>
                     <input type="text" class="form-control" placeholder="Dni" id="dni">
+                </div>
+                <div class="form-group" style="display:none">
+                    <label >Domicilio:</label>
+                    <input type="text" class="form-control" placeholder="Domicilio" id="domicilio">
                 </div>
                 <div class="form-group">
                     <label >Calle</label>
@@ -91,6 +105,15 @@
                     <label >Provincia</label>
                     <input type="text" class="form-control" placeholder="Provincia" id="provincia">
                 </div>
+                <div class="form-group">
+                    <label >Fecha de alta</label>
+                    <input type="text" class="form-control" placeholder="Fecha de Alta" id="fechaDeAlta">
+                </div>
+                <div class="form-group">
+                    <label >Rol</label>
+                    <input type="text" class="form-control" placeholder="Rol" id="rol">
+                </div>
+
                 <button type="submit" class="btn btn-primary">Modificar</button>
             </form>
             <div id="response" style="display:none; margin:10px">

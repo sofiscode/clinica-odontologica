@@ -26,22 +26,25 @@ window.addEventListener('load', function () {
       let tr_id = 'tr_' + paciente.id;
       let pacienteRow = '<tr id=\"' + tr_id + "\"" + '>' +
                 '<td>' + get_More_Info_Btn + '</td>' +
+                '<td class=\"td_usuario\">' + paciente.usuario + '</td>' +
+                '<td class=\"td_password\">' + paciente.password + '</td>' +
                 '<td class=\"td_nombre\">' + paciente.nombre + '</td>' +
                 '<td class=\"td_apellido\">' + paciente.apellido + '</td>' +
                 '<td class=\"td_dni\">' + paciente.dni + '</td>' +
+                 '<td class=\"td_domicilio\"  style="display:none">' + paciente.domicilio.id + '</td>' +
                 '<td class=\"td_calle\">' + paciente.domicilio.calle + '</td>' +
                 '<td class=\"td_numero\">' + paciente.domicilio.numero + '</td>' +
                 '<td class=\"td_piso\">' + paciente.domicilio.piso + '</td>' +
                 '<td class=\"td_localidad\">' + paciente.domicilio.localidad + '</td>' +
                 '<td class=\"td_provincia\">' + paciente.domicilio.provincia + '</td>' +
                 '<td class=\"td_fechaDeAlta\">' + paciente.fechaDeAlta + '</td>' +
-
+                '<td class=\"td_rol\" style="display:none">' + paciente.rol.id + '</td>' +
                 '<td>' + deleteButton + '</td>' +
                 '</tr>';
       $('#pacienteTable tbody').append(pacienteRow);
     };
 
-})
+    })
 })
 
 (function(){
